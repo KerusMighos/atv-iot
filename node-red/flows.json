@@ -1,0 +1,179 @@
+[
+    {
+        "id": "0ba3a6710182d907",
+        "type": "tab",
+        "label": "Fluxo 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "edd74cd59fa9966a",
+        "type": "tls-config",
+        "name": "Tls",
+        "cert": "/tls/node-red/node-red.crt",
+        "key": "/tls/node-red/node-red.key",
+        "ca": "/tls/ca/ca.crt",
+        "certname": "",
+        "keyname": "",
+        "caname": "",
+        "servername": "",
+        "verifyservercert": true,
+        "alpnprotocol": ""
+    },
+    {
+        "id": "39cc0b7ba8ca1a98",
+        "type": "mqtt-broker",
+        "name": "mosquitto",
+        "broker": "mosquitto",
+        "port": "8883",
+        "tls": "edd74cd59fa9966a",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": true,
+        "protocolVersion": 4,
+        "keepalive": 60,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "d7ce3a6fe61b2032",
+        "type": "mqtt in",
+        "z": "0ba3a6710182d907",
+        "name": "ping",
+        "topic": "ping",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "39cc0b7ba8ca1a98",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 410,
+        "y": 60,
+        "wires": [
+            [
+                "1c540b3a91678fa1"
+            ]
+        ]
+    },
+    {
+        "id": "1c540b3a91678fa1",
+        "type": "debug",
+        "z": "0ba3a6710182d907",
+        "name": "Debug ping",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 550,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "b77e9a1d701be77c",
+        "type": "mqtt out",
+        "z": "0ba3a6710182d907",
+        "name": "",
+        "topic": "ping",
+        "qos": "1",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "39cc0b7ba8ca1a98",
+        "x": 290,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "2bf6dca98ae4337e",
+        "type": "inject",
+        "z": "0ba3a6710182d907",
+        "name": "Ping Mosquitto",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "iso",
+        "payloadType": "date",
+        "x": 140,
+        "y": 60,
+        "wires": [
+            [
+                "b77e9a1d701be77c"
+            ]
+        ]
+    },
+    {
+        "id": "0fb3ef4a9f55ba67",
+        "type": "mqtt in",
+        "z": "0ba3a6710182d907",
+        "name": "Sensor temperatura",
+        "topic": "temperatura",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "39cc0b7ba8ca1a98",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 150,
+        "y": 220,
+        "wires": [
+            [
+                "06961e085a3ccd63"
+            ]
+        ]
+    },
+    {
+        "id": "06961e085a3ccd63",
+        "type": "debug",
+        "z": "0ba3a6710182d907",
+        "name": "Sensor temperatura",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 440,
+        "y": 160,
+        "wires": []
+    }
+]

@@ -1,0 +1,50 @@
+version: '3'
+
+services:
+
+
+  node-red:
+    image: nodered/node-red
+    ports:
+      - "1880:1880"
+    volumes:
+      - ./node-red:/data
+      - ./tls:/tls
+    restart: no
+    depends_on:
+      - mosquitto
+    environment:
+      - TZ=America/Bahia
+
+  mosquitto:
+    image: eclipse-mosquitto
+    ports:
+      - "8883:8883"
+      - "9001:9001"
+    volumes:
+      - ./mosquitto/config:/mosquitto/config
+      - ./mosquitto/data:/mosquitto/data
+      - ./mosquitto/log:/mosquitto/log
+      - ./tls:/tls
+    restart: no
+    environment:
+      - TZ=America/Bahia
+
+  temperatura:
+    build:
+      context: ./sensores
+      dockerfile: Dockerfile
+    image: sensores
+
+    depends_on:
+      - mosquitto
+
+    volumes:
+      - ./tls:/tls
+
+    environment:
+      - TZ=America/Bahia
+      - NODE_NAME=temperatura
+      - MIN_VALUE=0
+      - MAX_VALUE=40
+      - VARIATION=1

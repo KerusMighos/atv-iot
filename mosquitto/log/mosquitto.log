@@ -1,0 +1,196 @@
+1750011632: mosquitto version 2.0.21 starting
+1750011632: Config loaded from /mosquitto/config/mosquitto.conf.
+1750011632: Opening ipv4 listen socket on port 8883.
+1750011632: Opening ipv6 listen socket on port 8883.
+1750011632: Error: Unable to load CA certificates. Check cafile "/mosquitto/tls/server.crt".
+1750011632: OpenSSL Error[0]: error:80000002:system library::No such file or directory
+1750011632: OpenSSL Error[1]: error:10000080:BIO routines::no such file
+1750011632: OpenSSL Error[2]: error:05880020:x509 certificate routines::BIO lib
+1750012211: mosquitto version 2.0.21 starting
+1750012211: Config loaded from /mosquitto/config/mosquitto.conf.
+1750012211: Opening ipv4 listen socket on port 8883.
+1750012211: Opening ipv6 listen socket on port 8883.
+1750012211: Error: Unable to load CA certificates. Check cafile "/mosquitto/tls/server.crt".
+1750012211: OpenSSL Error[0]: error:80000002:system library::No such file or directory
+1750012211: OpenSSL Error[1]: error:10000080:BIO routines::no such file
+1750012211: OpenSSL Error[2]: error:05880020:x509 certificate routines::BIO lib
+1750013151: mosquitto version 2.0.21 starting
+1750013151: Config loaded from /mosquitto/config/mosquitto.conf.
+1750013151: Opening ipv4 listen socket on port 8883.
+1750013151: Opening ipv6 listen socket on port 8883.
+1750013151: Error: Unable to load CA certificates. Check cafile "/mosquitto/tls/server.crt".
+1750013151: OpenSSL Error[0]: error:80000002:system library::No such file or directory
+1750013151: OpenSSL Error[1]: error:10000080:BIO routines::no such file
+1750013151: OpenSSL Error[2]: error:05880020:x509 certificate routines::BIO lib
+1750013343: mosquitto version 2.0.21 starting
+1750013343: Config loaded from /mosquitto/config/mosquitto.conf.
+1750013343: Opening ipv4 listen socket on port 8883.
+1750013343: Opening ipv6 listen socket on port 8883.
+1750013343: Error: Unable to load CA certificates. Check cafile "/mosquitto/tls/ca.crt".
+1750013343: OpenSSL Error[0]: error:80000002:system library::No such file or directory
+1750013343: OpenSSL Error[1]: error:10000080:BIO routines::no such file
+1750013343: OpenSSL Error[2]: error:05880020:x509 certificate routines::BIO lib
+1750013459: mosquitto version 2.0.21 starting
+1750013459: Config loaded from /mosquitto/config/mosquitto.conf.
+1750013459: Opening ipv4 listen socket on port 8883.
+1750013459: Opening ipv6 listen socket on port 8883.
+1750013459: Error: Unable to load CA certificates. Check cafile "/mosquitto/tls/ca.crt".
+1750013459: OpenSSL Error[0]: error:80000002:system library::No such file or directory
+1750013459: OpenSSL Error[1]: error:10000080:BIO routines::no such file
+1750013459: OpenSSL Error[2]: error:05880020:x509 certificate routines::BIO lib
+1750014051: mosquitto version 2.0.21 starting
+1750014051: Config loaded from /mosquitto/config/mosquitto.conf.
+1750014051: Opening ipv4 listen socket on port 8883.
+1750014051: Opening ipv6 listen socket on port 8883.
+1750014051: mosquitto version 2.0.21 running
+1750014158: mosquitto version 2.0.21 terminating
+1750014158: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1750014160: mosquitto version 2.0.21 starting
+1750014160: Config loaded from /mosquitto/config/mosquitto.conf.
+1750014160: Opening ipv4 listen socket on port 8883.
+1750014160: Opening ipv6 listen socket on port 8883.
+1750014160: mosquitto version 2.0.21 running
+1750014707: mosquitto version 2.0.21 terminating
+1750014707: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1750015770: mosquitto version 2.0.21 starting
+1750015770: Config loaded from /mosquitto/config/mosquitto.conf.
+1750015770: Opening ipv4 listen socket on port 8883.
+1750015770: Opening ipv6 listen socket on port 8883.
+1750015770: Error: Unable to load server key file "/tls/mosquitto/mosquitto.key". Check keyfile.
+1750015770: OpenSSL Error[0]: error:8000000D:system library::Permission denied
+1750015770: OpenSSL Error[1]: error:10080002:BIO routines::system lib
+1750015770: OpenSSL Error[2]: error:0A080002:SSL routines::system lib
+1750015843: mosquitto version 2.0.21 starting
+1750015843: Config loaded from /mosquitto/config/mosquitto.conf.
+1750015843: Opening ipv4 listen socket on port 8883.
+1750015843: Opening ipv6 listen socket on port 8883.
+1750015843: Error: Unable to load server key file "/tls/mosquitto/mosquitto.key". Check keyfile.
+1750015843: OpenSSL Error[0]: error:8000000D:system library::Permission denied
+1750015843: OpenSSL Error[1]: error:10080002:BIO routines::system lib
+1750015843: OpenSSL Error[2]: error:0A080002:SSL routines::system lib
+1750015898: mosquitto version 2.0.21 starting
+1750015898: Config loaded from /mosquitto/config/mosquitto.conf.
+1750015898: Opening ipv4 listen socket on port 8883.
+1750015898: Opening ipv6 listen socket on port 8883.
+1750015898: Error: Unable to load server key file "/tls/mosquitto/mosquitto.key". Check keyfile.
+1750015898: OpenSSL Error[0]: error:8000000D:system library::Permission denied
+1750015898: OpenSSL Error[1]: error:10080002:BIO routines::system lib
+1750015898: OpenSSL Error[2]: error:0A080002:SSL routines::system lib
+1750015911: mosquitto version 2.0.21 starting
+1750015911: Config loaded from /mosquitto/config/mosquitto.conf.
+1750015911: Opening ipv4 listen socket on port 8883.
+1750015911: Opening ipv6 listen socket on port 8883.
+1750015911: Error: Unable to load server key file "/tls/mosquitto/mosquitto.key". Check keyfile.
+1750015911: OpenSSL Error[0]: error:8000000D:system library::Permission denied
+1750015911: OpenSSL Error[1]: error:10080002:BIO routines::system lib
+1750015911: OpenSSL Error[2]: error:0A080002:SSL routines::system lib
+1750016206: mosquitto version 2.0.21 starting
+1750016206: Config loaded from /mosquitto/config/mosquitto.conf.
+1750016206: Opening ipv4 listen socket on port 8883.
+1750016206: Opening ipv6 listen socket on port 8883.
+1750016206: Error: Unable to load server key file "/tls/mosquitto/mosquitto.key". Check keyfile.
+1750016206: OpenSSL Error[0]: error:8000000D:system library::Permission denied
+1750016206: OpenSSL Error[1]: error:10080002:BIO routines::system lib
+1750016206: OpenSSL Error[2]: error:0A080002:SSL routines::system lib
+1750016288: mosquitto version 2.0.21 starting
+1750016288: Config loaded from /mosquitto/config/mosquitto.conf.
+1750016288: Opening ipv4 listen socket on port 8883.
+1750016288: Opening ipv6 listen socket on port 8883.
+1750016288: Error: Unable to load CA certificates. Check cafile "/tls/ca/cba.crt".
+1750016288: OpenSSL Error[0]: error:80000002:system library::No such file or directory
+1750016288: OpenSSL Error[1]: error:10000080:BIO routines::no such file
+1750016288: OpenSSL Error[2]: error:05880020:x509 certificate routines::BIO lib
+1750016599: mosquitto version 2.0.21 starting
+1750016599: Config loaded from /mosquitto/config/mosquitto.conf.
+1750016599: Opening ipv4 listen socket on port 8883.
+1750016599: Opening ipv6 listen socket on port 8883.
+1750016599: Error: Unable to load server key file "/tls/mosquitto/mosquitto.key". Check keyfile.
+1750016599: OpenSSL Error[0]: error:8000000D:system library::Permission denied
+1750016599: OpenSSL Error[1]: error:10080002:BIO routines::system lib
+1750016599: OpenSSL Error[2]: error:0A080002:SSL routines::system lib
+1750016834: mosquitto version 2.0.21 starting
+1750016834: Config loaded from /mosquitto/config/mosquitto.conf.
+1750016834: Opening ipv4 listen socket on port 8883.
+1750016834: Opening ipv6 listen socket on port 8883.
+1750016834: mosquitto version 2.0.21 running
+1750017290: New connection from 172.22.0.2:39278 on port 8883.
+1750017290: Client nodered_77b5e61a9c247402 disconnected, not authorised.
+1750017305: New connection from 172.22.0.2:56884 on port 8883.
+1750017305: Client nodered_77b5e61a9c247402 disconnected, not authorised.
+1750017320: New connection from 172.22.0.2:42926 on port 8883.
+1750017320: Client nodered_77b5e61a9c247402 disconnected, not authorised.
+1750017327: mosquitto version 2.0.21 terminating
+1750017327: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1750017332: mosquitto version 2.0.21 starting
+1750017332: Config loaded from /mosquitto/config/mosquitto.conf.
+1750017332: Opening ipv4 listen socket on port 8883.
+1750017332: Opening ipv6 listen socket on port 8883.
+1750017332: mosquitto version 2.0.21 running
+1750017336: New connection from 172.22.0.3:44400 on port 8883.
+1750017336: Client nodered_99545b24109a6407 disconnected, not authorised.
+1750017351: New connection from 172.22.0.3:44012 on port 8883.
+1750017351: Client nodered_99545b24109a6407 disconnected, not authorised.
+1750017366: New connection from 172.22.0.3:48548 on port 8883.
+1750017366: Client nodered_99545b24109a6407 disconnected, not authorised.
+1750017381: New connection from 172.22.0.3:57692 on port 8883.
+1750017381: Client nodered_99545b24109a6407 disconnected, not authorised.
+1750017396: New connection from 172.22.0.3:58360 on port 8883.
+1750017396: Client nodered_99545b24109a6407 disconnected, not authorised.
+1750017411: New connection from 172.22.0.3:40006 on port 8883.
+1750017411: Client nodered_99545b24109a6407 disconnected, not authorised.
+1750017426: New connection from 172.22.0.3:34784 on port 8883.
+1750017426: Client nodered_99545b24109a6407 disconnected, not authorised.
+1750017429: mosquitto version 2.0.21 terminating
+1750017429: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1750017431: mosquitto version 2.0.21 starting
+1750017431: Config loaded from /mosquitto/config/mosquitto.conf.
+1750017431: Opening ipv4 listen socket on port 8883.
+1750017431: Opening ipv6 listen socket on port 8883.
+1750017431: mosquitto version 2.0.21 running
+1750017436: New connection from 172.22.0.3:40164 on port 8883.
+1750017436: Sending CONNACK to nodered_be1bfa4459ad10fa (0, 5)
+1750017436: Client nodered_be1bfa4459ad10fa disconnected, not authorised.
+1750017451: New connection from 172.22.0.3:53690 on port 8883.
+1750017451: Sending CONNACK to nodered_be1bfa4459ad10fa (0, 5)
+1750017451: Client nodered_be1bfa4459ad10fa disconnected, not authorised.
+1750017466: New connection from 172.22.0.3:48908 on port 8883.
+1750017466: Sending CONNACK to nodered_be1bfa4459ad10fa (0, 5)
+1750017466: Client nodered_be1bfa4459ad10fa disconnected, not authorised.
+1750017481: New connection from 172.22.0.3:53828 on port 8883.
+1750017481: Sending CONNACK to nodered_be1bfa4459ad10fa (0, 5)
+1750017481: Client nodered_be1bfa4459ad10fa disconnected, not authorised.
+1750017496: New connection from 172.22.0.3:48450 on port 8883.
+1750017496: Sending CONNACK to nodered_be1bfa4459ad10fa (0, 5)
+1750017496: Client nodered_be1bfa4459ad10fa disconnected, not authorised.
+1750017511: New connection from 172.22.0.3:34930 on port 8883.
+1750017511: Sending CONNACK to nodered_be1bfa4459ad10fa (0, 5)
+1750017511: Client nodered_be1bfa4459ad10fa disconnected, not authorised.
+1750017526: New connection from 172.22.0.3:47136 on port 8883.
+1750017526: Sending CONNACK to nodered_be1bfa4459ad10fa (0, 5)
+1750017526: Client nodered_be1bfa4459ad10fa disconnected, not authorised.
+1750017541: New connection from 172.22.0.3:52106 on port 8883.
+1750017541: Sending CONNACK to nodered_be1bfa4459ad10fa (0, 5)
+1750017541: Client nodered_be1bfa4459ad10fa disconnected, not authorised.
+1750017556: New connection from 172.22.0.3:46170 on port 8883.
+1750017556: Sending CONNACK to nodered_be1bfa4459ad10fa (0, 5)
+1750017556: Client nodered_be1bfa4459ad10fa disconnected, not authorised.
+1750017571: New connection from 172.22.0.3:48656 on port 8883.
+1750017571: Sending CONNACK to nodered_be1bfa4459ad10fa (0, 5)
+1750017571: Client nodered_be1bfa4459ad10fa disconnected, not authorised.
+1750017586: New connection from 172.22.0.3:36030 on port 8883.
+1750017586: Sending CONNACK to nodered_be1bfa4459ad10fa (0, 5)
+1750017586: Client nodered_be1bfa4459ad10fa disconnected, not authorised.
+1750017601: New connection from 172.22.0.3:45154 on port 8883.
+1750017601: Sending CONNACK to nodered_be1bfa4459ad10fa (0, 5)
+1750017601: Client nodered_be1bfa4459ad10fa disconnected, not authorised.
+1750017616: New connection from 172.22.0.3:40316 on port 8883.
+1750017616: Sending CONNACK to nodered_be1bfa4459ad10fa (0, 5)
+1750017616: Client nodered_be1bfa4459ad10fa disconnected, not authorised.
+1750017631: New connection from 172.22.0.3:39266 on port 8883.
+1750017631: Sending CONNACK to nodered_be1bfa4459ad10fa (0, 5)
+1750017631: Client nodered_be1bfa4459ad10fa disconnected, not authorised.
+1750017646: New connection from 172.22.0.3:36676 on port 8883.
+1750017646: Sending CONNACK to nodered_be1bfa4459ad10fa (0, 5)
+1750017646: Client nodered_be1bfa4459ad10fa disconnected, not authorised.
+1750017654: mosquitto version 2.0.21 terminating
+1750017654: Saving in-memory database to /mosquitto/data//mosquitto.db.
