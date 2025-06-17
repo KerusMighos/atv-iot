@@ -6,4 +6,6 @@ node-red/.npm/
 
 sensores/node_modules
 
+atuadores/node_modules
+
 tls/

@@ -5,7 +5,7 @@
 # =========================
 
 # Lista de clientes/serviços
-CLIENTS=("mosquitto" "node-red" "temperatura" "luminosidade" "umidade-solo" "exaustor" "irrigacao")
+CLIENTS=("rabbitmq" "mosquitto" "node-red" "temperatura" "luminosidade" "umidade-solo" "exaustor" "irrigacao")
 
 # Limpar pasta anterior
 rm -rf tls/
@@ -20,7 +20,7 @@ mkdir -p tls/ca
 
 openssl genrsa -out tls/ca/ca.key 4096
 
-openssl req -x509 -new -nodes -key tls/ca/ca.key -sha256 -days 3650 -out tls/ca/ca.crt -subj "/CN=MinhaCA"
+openssl req -x509 -new -nodes -key tls/ca/ca.key -sha256 -days 3650 -out tls/ca/ca.pem -subj "/CN=MinhaCA"
 
 echo "✅ CA gerada em tls/ca"
 
@@ -37,8 +37,8 @@ for CLIENT in "${CLIENTS[@]}"; do
 
     openssl req -new -key "tls/$CLIENT/$CLIENT.key" -out "tls/$CLIENT/$CLIENT.csr" -subj "/CN=$CLIENT"
 
-    openssl x509 -req -in "tls/$CLIENT/$CLIENT.csr" -CA tls/ca/ca.crt -CAkey tls/ca/ca.key -CAcreateserial \
-    -out "tls/$CLIENT/$CLIENT.crt" -days 825 -sha256
+    openssl x509 -req -in "tls/$CLIENT/$CLIENT.csr" -CA tls/ca/ca.pem -CAkey tls/ca/ca.key -CAcreateserial \
+    -out "tls/$CLIENT/$CLIENT.pem" -days 825 -sha256
 
     rm "tls/$CLIENT/$CLIENT.csr"
 

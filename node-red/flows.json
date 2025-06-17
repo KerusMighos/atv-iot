@@ -151,8 +151,8 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 150,
-        "y": 220,
+        "x": 190,
+        "y": 200,
         "wires": [
             [
                 "06961e085a3ccd63"
@@ -174,6 +174,82 @@
         "statusType": "auto",
         "x": 440,
         "y": 160,
+        "wires": []
+    },
+    {
+        "id": "8755a97753f0f9e1",
+        "type": "mqtt in",
+        "z": "0ba3a6710182d907",
+        "name": "Luminosidade",
+        "topic": "luminosidade",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "39cc0b7ba8ca1a98",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 190,
+        "y": 280,
+        "wires": [
+            [
+                "2264737dd9f5ce0a"
+            ]
+        ]
+    },
+    {
+        "id": "d86d8f0c20884ba6",
+        "type": "mqtt in",
+        "z": "0ba3a6710182d907",
+        "name": "Umidade do Solo",
+        "topic": "umidade-solo",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "39cc0b7ba8ca1a98",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 200,
+        "y": 360,
+        "wires": [
+            [
+                "120db5ead66b9e10"
+            ]
+        ]
+    },
+    {
+        "id": "2264737dd9f5ce0a",
+        "type": "debug",
+        "z": "0ba3a6710182d907",
+        "name": "Luminosidade",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 460,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "120db5ead66b9e10",
+        "type": "debug",
+        "z": "0ba3a6710182d907",
+        "name": "Umidade do solo",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 490,
+        "y": 360,
         "wires": []
     }
 ]

@@ -3,6 +3,13 @@ import SensorSimulado from './SensorSimulado.js';
 import MqttConn from './MqttConn.js';
 import { getTlsFiles } from './tls.js';
 
+
+process.on("SIGTERM", () => {
+    console.log("🛑 Encerrando o processo...");
+    process.exit(0);
+});
+
+
 const node_name = process.env.NODE_NAME;
 const min = parseFloat(process.env.MIN_VALUE) || 0;
 const max = parseFloat(process.env.MAX_VALUE) || 100;

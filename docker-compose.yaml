@@ -30,21 +30,88 @@ services:
     environment:
       - TZ=America/Bahia
 
+  rabbitmq:
+      image: rabbitmq:3.13-management
+
+      ports:
+        - "5671:5671"   # TLS AMQP
+        - "15672:15672" # management
+      volumes:
+        - ./rabbitmq:/etc/rabbitmq
+        - ./tls:/tls
+      environment:
+        - RABBITMQ_CONFIG_FILE=/etc/rabbitmq/rabbitmq
+        - RABBITMQ_DEFAULT_USER=default
+        - RABBITMQ_DEFAULT_PASS=default
+      healthcheck:
+        test: rabbitmq-diagnostics -q ping
+        interval: 1s
+        timeout: 20s
+        retries: 100
+
+
   temperatura:
     build:
       context: ./sensores
       dockerfile: Dockerfile
     image: sensores
-
     depends_on:
       - mosquitto
-
     volumes:
       - ./tls:/tls
-
     environment:
       - TZ=America/Bahia
       - NODE_NAME=temperatura
       - MIN_VALUE=0
       - MAX_VALUE=40
       - VARIATION=1
+
+  humidade-solo:
+    build:
+      context: ./sensores
+      dockerfile: Dockerfile
+    image: sensores
+    depends_on:
+      - mosquitto
+    volumes:
+      - ./tls:/tls
+    environment:
+      - TZ=America/Bahia
+      - NODE_NAME=umidade-solo
+      - MIN_VALUE=0
+      - MAX_VALUE=40
+      - VARIATION=1
+
+  luminosidade:
+
+    build:
+      context: ./sensores
+      dockerfile: Dockerfile
+    image: sensores
+    depends_on:
+      - mosquitto
+    volumes:
+      - ./tls:/tls
+    environment:
+      - TZ=America/Bahia
+      - NODE_NAME=luminosidade
+      - MIN_VALUE=0
+      - MAX_VALUE=40
+      - VARIATION=1
+
+  exaustor:
+    build:
+      context: ./atuadores
+      dockerfile: Dockerfile
+    image: atuadores
+    depends_on:
+      rabbitmq:
+        condition: service_healthy
+
+    volumes:
+      - ./tls:/tls
+    environment:
+      - TZ=America/Bahia
+      - NODE_NAME=exaustor
+      
+    
