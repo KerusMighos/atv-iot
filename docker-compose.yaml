@@ -66,8 +66,9 @@ services:
       - MIN_VALUE=0
       - MAX_VALUE=40
       - VARIATION=15
+      - UNIDADE=°C
 
-  humidade-solo:
+  umidade-solo:
     build:
       context: ./sensores
       dockerfile: Dockerfile
@@ -82,6 +83,7 @@ services:
       - MIN_VALUE=0
       - MAX_VALUE=100
       - VARIATION=20
+      - UNIDADE=%
 
   luminosidade:
 
@@ -99,6 +101,7 @@ services:
       - MIN_VALUE=0
       - MAX_VALUE=100000
       - VARIATION=10000
+      - UNIDADE=lumens
 
   exaustor:
     build:

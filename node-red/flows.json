@@ -161,8 +161,8 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 170,
-        "y": 360,
+        "x": 110,
+        "y": 480,
         "wires": [
             [
                 "06961e085a3ccd63",
@@ -177,14 +177,14 @@
         "name": "Sensor temperatura",
         "active": true,
         "tosidebar": true,
-        "console": false,
+        "console": true,
         "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
+        "complete": "\"Nova leitura do sensor: 🌡️ \" & payload.sensor & \", valor: \" & payload.valor & payload.unidade",
+        "targetType": "jsonata",
         "statusVal": "",
         "statusType": "auto",
-        "x": 440,
-        "y": 200,
+        "x": 380,
+        "y": 420,
         "wires": []
     },
     {
@@ -236,10 +236,10 @@
         "name": "Luminosidade",
         "active": true,
         "tosidebar": true,
-        "console": false,
+        "console": true,
         "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
+        "complete": "\"Nova leitura do sensor: ☀️ \" & payload.sensor & \", valor: \" & payload.valor & payload.unidade",
+        "targetType": "jsonata",
         "statusVal": "",
         "statusType": "auto",
         "x": 360,
@@ -253,13 +253,13 @@
         "name": "Umidade do solo",
         "active": true,
         "tosidebar": true,
-        "console": false,
+        "console": true,
         "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
+        "complete": "\"Nova leitura do sensor: 💧 \" & payload.sensor & \", valor: \" & payload.valor & payload.unidade",
+        "targetType": "jsonata",
         "statusVal": "",
         "statusType": "auto",
-        "x": 390,
+        "x": 370,
         "y": 620,
         "wires": []
     },
@@ -275,11 +275,6 @@
             {
                 "p": "topic",
                 "vt": "str"
-            },
-            {
-                "p": "contentType",
-                "v": "{\"potencia\":10}",
-                "vt": "json"
             }
         ],
         "repeat": "",
@@ -289,31 +284,13 @@
         "topic": "",
         "payload": "{\"potencia\":10}",
         "payloadType": "json",
-        "x": 730,
-        "y": 100,
+        "x": 410,
+        "y": 280,
         "wires": [
             [
-                "acd054848a37a0af",
                 "564f3056f77c7ff8"
             ]
         ]
-    },
-    {
-        "id": "acd054848a37a0af",
-        "type": "debug",
-        "z": "0ba3a6710182d907",
-        "name": "Debug Exaustor",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 980,
-        "y": 60,
-        "wires": []
     },
     {
         "id": "564f3056f77c7ff8",
@@ -330,8 +307,8 @@
         "amqpProperties": "{ \"headers\": {} }",
         "rpcTimeoutMilliseconds": 3000,
         "outputs": 0,
-        "x": 1000,
-        "y": 320,
+        "x": 700,
+        "y": 460,
         "wires": []
     },
     {
@@ -355,12 +332,11 @@
         "topic": "",
         "payload": "{\"potencia\":50}",
         "payloadType": "json",
-        "x": 730,
-        "y": 160,
+        "x": 410,
+        "y": 320,
         "wires": [
             [
-                "564f3056f77c7ff8",
-                "acd054848a37a0af"
+                "564f3056f77c7ff8"
             ]
         ]
     },
@@ -385,35 +361,12 @@
         "topic": "",
         "payload": "{\"potencia\":90}",
         "payloadType": "json",
-        "x": 730,
-        "y": 220,
+        "x": 410,
+        "y": 360,
         "wires": [
             [
                 "564f3056f77c7ff8"
             ]
-        ]
-    },
-    {
-        "id": "4c6356164e484a0e",
-        "type": "switch",
-        "z": "0ba3a6710182d907",
-        "name": "",
-        "property": "payload",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "eq",
-                "v": "",
-                "vt": "str"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 1,
-        "x": 230,
-        "y": 720,
-        "wires": [
-            []
         ]
     },
     {
@@ -421,19 +374,37 @@
         "type": "function",
         "z": "0ba3a6710182d907",
         "name": "Toma Decisão",
-        "func": "\nvar new_potencia = 0;\n\nvar sensor_read = msg.payload.value\n\nif(sensor_read > 35){\n    new_potencia = 90\n} else if (sensor_read > 25) {\n    new_potencia = 50\n} else if (sensor_read > 20) {\n    new_potencia = 10\n} else {\n    new_potencia = 0\n}\n\nvar old_potencia = context.get(\"old_potencia\")\n\nif( old_potencia == new_potencia) {\n    node.log(`📌 Mantendo potencia de ${old_potencia}%`);\n    return;\n}\n\nnode.log(`♻️ Atualizando potencia para ${new_potencia}`);\ncontext.set(\"old_potencia\", new_potencia)\nreturn {payload:{potencia: new_potencia}};\n",
+        "func": "\nvar new_potencia = 0;\n\nvar sensor_read = msg.payload.valor\n\nif(sensor_read > 35){\n    new_potencia = 90\n} else if (sensor_read > 25) {\n    new_potencia = 50\n} else if (sensor_read > 20) {\n    new_potencia = 10\n} else {\n    new_potencia = 0\n}\n\nvar old_potencia = context.get(\"old_potencia\")\n\nif( old_potencia == new_potencia) {\n    node.log(`📌 Mantendo potencia de ${old_potencia}%`);\n    return;\n}\n\nnode.log(`♻️ Atualizando potencia para ${new_potencia}`);\ncontext.set(\"old_potencia\", new_potencia)\nreturn {payload:{potencia: new_potencia}};\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
         "initialize": "//O código adicionado aqui será executado uma vez\n// sempre que o nó for iniciado.\n\nif (context.get(\"old_potencia\") === undefined) {\n    context.set(\"old_potencia\", 0)\n}",
         "finalize": "",
         "libs": [],
-        "x": 600,
-        "y": 340,
+        "x": 460,
+        "y": 480,
         "wires": [
             [
-                "564f3056f77c7ff8"
+                "564f3056f77c7ff8",
+                "5033169a88163c31"
             ]
         ]
+    },
+    {
+        "id": "5033169a88163c31",
+        "type": "debug",
+        "z": "0ba3a6710182d907",
+        "name": "Comando para o exaustor",
+        "active": false,
+        "tosidebar": true,
+        "console": true,
+        "tostatus": false,
+        "complete": "`Alterando potencia do exaustor para ${payload.potencia}%`",
+        "targetType": "jsonata",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 680,
+        "y": 620,
+        "wires": []
     }
 ]
