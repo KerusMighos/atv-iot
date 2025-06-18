@@ -24,7 +24,9 @@ await mqttConn.connect({ ...getTlsFiles(node_name) });
 
 setInterval(() => {
     const data = sensor.lerValor();
-    const payload = JSON.stringify({ from: node_name, time: new Date().toISOString(), ...data });
+    const payload = JSON.stringify({   from: node_name, time: new Date().toISOString(), value: data });
+
+    console.log(`📊 Enviando dados do sensor ${node_name}: ${data}`);
 
     mqttConn.publish(node_name, payload, 1);
 }, 5000);

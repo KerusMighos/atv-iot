@@ -10,9 +10,10 @@ services:
     volumes:
       - ./node-red:/data
       - ./tls:/tls
-    restart: no
+    restart: always
     depends_on:
       - mosquitto
+      - rabbitmq
     environment:
       - TZ=America/Bahia
 
@@ -34,7 +35,7 @@ services:
       image: rabbitmq:3.13-management
 
       ports:
-        - "5671:5671"   # TLS AMQP
+        - "5672:5672"   # AMQP
         - "15672:15672" # management
       volumes:
         - ./rabbitmq:/etc/rabbitmq
@@ -64,7 +65,7 @@ services:
       - NODE_NAME=temperatura
       - MIN_VALUE=0
       - MAX_VALUE=40
-      - VARIATION=1
+      - VARIATION=15
 
   humidade-solo:
     build:
@@ -79,8 +80,8 @@ services:
       - TZ=America/Bahia
       - NODE_NAME=umidade-solo
       - MIN_VALUE=0
-      - MAX_VALUE=40
-      - VARIATION=1
+      - MAX_VALUE=100
+      - VARIATION=20
 
   luminosidade:
 
@@ -96,8 +97,8 @@ services:
       - TZ=America/Bahia
       - NODE_NAME=luminosidade
       - MIN_VALUE=0
-      - MAX_VALUE=40
-      - VARIATION=1
+      - MAX_VALUE=100000
+      - VARIATION=10000
 
   exaustor:
     build:
@@ -113,5 +114,7 @@ services:
     environment:
       - TZ=America/Bahia
       - NODE_NAME=exaustor
+
+    restart: always
       
     

@@ -16,17 +16,14 @@ export class AmqpConn {
         let trys = 10;
         const delay = 15000;
 
-        console.log('CA: ', ca);
-        
-
         const options = {
-            protocol: 'amqps',
+            protocol: 'amqp',
             hostname: 'rabbitmq',
-            port: 5671,
+            port: 5672,
             username: 'default',
             password: 'default',
-            ca: fs.readFileSync('/tls/ca/ca.pem'),
-
+            // TLS não consegui fz o tls funcionar, continuava dando erro de que o certificado CA não era confiável
+            // ca: fs.readFileSync('/tls/ca/ca.pem'),
             // key,
             // cert,
         };
@@ -62,12 +59,20 @@ export class AmqpConn {
             return;
         }
 
+        
         this.channel.consume(this.queueName, (msg) => {
+
             if (msg !== null) {
-                console.log(`📥 Mensagem recebida no nó ${this.node_name}:`, msg.content.toString());
-                callback(msg);
+                const data = JSON.parse(msg.content.toString());
+
+                callback(data);
                 this.channel.ack(msg);
+            } else {
+                console.warn(`⚠️ Mensagem nula recebida no nó ${this.node_name}.`);
             }
+
+
+
         }, { noAck: false });
     }
 

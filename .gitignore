@@ -9,3 +9,7 @@ sensores/node_modules
 atuadores/node_modules
 
 tls/
+
+mosquitto/data
+
+mosquitto/log

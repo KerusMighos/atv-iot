@@ -45,7 +45,7 @@ class MqttConn {
                 if (err) {
                     console.error(`❌ Erro ao publicar no nó ${this.node_name}:`, err);
                 } else {
-                    console.log(`📤 Mensagem publicada no nó ${this.node_name}:`, message);
+                    // console.log(`📤 Mensagem publicada no nó ${this.node_name}:`, message);
                 }
             });
         } else {

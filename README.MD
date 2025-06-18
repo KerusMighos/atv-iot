@@ -1,4 +1,37 @@
 
+# Cenario: Estufa automatizada
+
+O cenario desenvolvido, comforme sugerido foi o de uma estufa automatizada.
+
+# Sensores
+
+Os sensores simulados foram os de luminosidade, temperatura e umidade do solo.
+
+# Atuadores
+
+Tambem foi simulado um atuador, um exaustor que tem como objetivo diminuir a temperatura da estufa 
+
+# Protocolos utilizados
+
+## Mqtt Mosquitto
+
+Foi implementado na comunicação entre os sensores e o Node Red
+
+### Segurança
+
+Foi implementada TLS tanto para criptografia quanto para autenticação, sendo necessario que os clients do broker apresentem certificados validos.
+
+## Amqp RabbitMQ
+
+Foi implementado na comunicação entre o Node Red e o atuador
+
+### Segurança
+
+Foi utilizada a autenticação através de usuario e senha
+
+
+
+
 # Passos para gerar as chaves tls
 
 ## Gerar par de chaves para a Autoridade Certificadora

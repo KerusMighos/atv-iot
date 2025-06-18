@@ -11,9 +11,9 @@
         "id": "edd74cd59fa9966a",
         "type": "tls-config",
         "name": "Tls",
-        "cert": "/tls/node-red/node-red.crt",
+        "cert": "/tls/node-red/node-red.pem",
         "key": "/tls/node-red/node-red.key",
-        "ca": "/tls/ca/ca.crt",
+        "ca": "/tls/ca/ca.pem",
         "certname": "",
         "keyname": "",
         "caname": "",
@@ -52,6 +52,16 @@
         "willMsg": {},
         "userProps": "",
         "sessionExpiry": ""
+    },
+    {
+        "id": "872f783e045dd1ea",
+        "type": "amqp-broker",
+        "name": "rabbitmq",
+        "host": "rabbitmq",
+        "port": 5672,
+        "vhost": "",
+        "tls": false,
+        "credsFromSettings": false
     },
     {
         "id": "d7ce3a6fe61b2032",
@@ -151,11 +161,12 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 190,
-        "y": 200,
+        "x": 170,
+        "y": 360,
         "wires": [
             [
-                "06961e085a3ccd63"
+                "06961e085a3ccd63",
+                "1cebc08c29a4831f"
             ]
         ]
     },
@@ -173,7 +184,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 440,
-        "y": 160,
+        "y": 200,
         "wires": []
     },
     {
@@ -189,10 +200,12 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 190,
-        "y": 280,
+        "x": 90,
+        "y": 540,
         "wires": [
-            []
+            [
+                "2264737dd9f5ce0a"
+            ]
         ]
     },
     {
@@ -208,10 +221,219 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 200,
-        "y": 360,
+        "x": 100,
+        "y": 620,
+        "wires": [
+            [
+                "120db5ead66b9e10"
+            ]
+        ]
+    },
+    {
+        "id": "2264737dd9f5ce0a",
+        "type": "debug",
+        "z": "0ba3a6710182d907",
+        "name": "Luminosidade",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 360,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "120db5ead66b9e10",
+        "type": "debug",
+        "z": "0ba3a6710182d907",
+        "name": "Umidade do solo",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 390,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "df291c997ef0ff87",
+        "type": "inject",
+        "z": "0ba3a6710182d907",
+        "name": "Potencia 10",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            },
+            {
+                "p": "contentType",
+                "v": "{\"potencia\":10}",
+                "vt": "json"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"potencia\":10}",
+        "payloadType": "json",
+        "x": 730,
+        "y": 100,
+        "wires": [
+            [
+                "acd054848a37a0af",
+                "564f3056f77c7ff8"
+            ]
+        ]
+    },
+    {
+        "id": "acd054848a37a0af",
+        "type": "debug",
+        "z": "0ba3a6710182d907",
+        "name": "Debug Exaustor",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 980,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "564f3056f77c7ff8",
+        "type": "amqp-out",
+        "z": "0ba3a6710182d907",
+        "name": "",
+        "broker": "872f783e045dd1ea",
+        "reconnectOnError": true,
+        "exchangeName": "",
+        "exchangeType": "direct",
+        "exchangeRoutingKey": "exaustor",
+        "exchangeRoutingKeyType": "str",
+        "exchangeDurable": true,
+        "amqpProperties": "{ \"headers\": {} }",
+        "rpcTimeoutMilliseconds": 3000,
+        "outputs": 0,
+        "x": 1000,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "2192c4c617dcb82b",
+        "type": "inject",
+        "z": "0ba3a6710182d907",
+        "name": "Potencia 50",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"potencia\":50}",
+        "payloadType": "json",
+        "x": 730,
+        "y": 160,
+        "wires": [
+            [
+                "564f3056f77c7ff8",
+                "acd054848a37a0af"
+            ]
+        ]
+    },
+    {
+        "id": "936ccba5569002bc",
+        "type": "inject",
+        "z": "0ba3a6710182d907",
+        "name": "Potencia 90",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"potencia\":90}",
+        "payloadType": "json",
+        "x": 730,
+        "y": 220,
+        "wires": [
+            [
+                "564f3056f77c7ff8"
+            ]
+        ]
+    },
+    {
+        "id": "4c6356164e484a0e",
+        "type": "switch",
+        "z": "0ba3a6710182d907",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 230,
+        "y": 720,
         "wires": [
             []
+        ]
+    },
+    {
+        "id": "1cebc08c29a4831f",
+        "type": "function",
+        "z": "0ba3a6710182d907",
+        "name": "Toma Decisão",
+        "func": "\nvar new_potencia = 0;\n\nvar sensor_read = msg.payload.value\n\nif(sensor_read > 35){\n    new_potencia = 90\n} else if (sensor_read > 25) {\n    new_potencia = 50\n} else if (sensor_read > 20) {\n    new_potencia = 10\n} else {\n    new_potencia = 0\n}\n\nvar old_potencia = context.get(\"old_potencia\")\n\nif( old_potencia == new_potencia) {\n    node.log(`📌 Mantendo potencia de ${old_potencia}%`);\n    return;\n}\n\nnode.log(`♻️ Atualizando potencia para ${new_potencia}`);\ncontext.set(\"old_potencia\", new_potencia)\nreturn {payload:{potencica: new_potencia}};\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "//O código adicionado aqui será executado uma vez\n// sempre que o nó for iniciado.\n\nif (context.get(\"old_potencia\") === undefined) {\n    context.set(\"old_potencia\", 0)\n}",
+        "finalize": "",
+        "libs": [],
+        "x": 600,
+        "y": 340,
+        "wires": [
+            [
+                "564f3056f77c7ff8"
+            ]
         ]
     }
 ]

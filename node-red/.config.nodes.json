@@ -427,98 +427,55 @@
             }
         }
     },
-    "node-red-contrib-coap": {
-        "name": "node-red-contrib-coap",
-        "version": "0.8.0",
+    "@stormpass/node-red-contrib-amqp": {
+        "name": "@stormpass/node-red-contrib-amqp",
+        "version": "1.4.1",
         "local": true,
         "user": true,
         "nodes": {
-            "coap-in": {
-                "name": "coap-in",
+            "amqp-in": {
+                "name": "amqp-in",
                 "types": [
-                    "coap-server",
-                    "coap in",
-                    "coap response"
+                    "amqp-in"
                 ],
                 "enabled": true,
                 "local": true,
                 "user": false,
-                "module": "node-red-contrib-coap",
-                "file": "/data/node_modules/node-red-contrib-coap/coap/coap-in.js"
+                "module": "@stormpass/node-red-contrib-amqp",
+                "file": "/data/node_modules/@stormpass/node-red-contrib-amqp/build/src/nodes/amqp-in.js"
             },
-            "coap-request": {
-                "name": "coap-request",
+            "amqp-out": {
+                "name": "amqp-out",
                 "types": [
-                    "coap request"
+                    "amqp-out"
                 ],
                 "enabled": true,
                 "local": true,
                 "user": false,
-                "module": "node-red-contrib-coap",
-                "file": "/data/node_modules/node-red-contrib-coap/coap/coap-request.js"
-            }
-        }
-    },
-    "@5minds/node-red-contrib-processcube-amqp": {
-        "name": "@5minds/node-red-contrib-processcube-amqp",
-        "version": "0.9.0",
-        "local": true,
-        "user": true,
-        "nodes": {
-            "amqpInput": {
-                "name": "amqpInput",
-                "types": [
-                    "amqp-input"
-                ],
-                "enabled": true,
-                "local": true,
-                "user": false,
-                "module": "@5minds/node-red-contrib-processcube-amqp",
-                "file": "/data/node_modules/@5minds/node-red-contrib-processcube-amqp/amqp-input.js"
+                "module": "@stormpass/node-red-contrib-amqp",
+                "file": "/data/node_modules/@stormpass/node-red-contrib-amqp/build/src/nodes/amqp-out.js"
             },
-            "amqpIntermediateInput": {
-                "name": "amqpIntermediateInput",
+            "amqp-broker": {
+                "name": "amqp-broker",
                 "types": [
-                    "amqp-intermediate-input"
+                    "amqp-broker"
                 ],
                 "enabled": true,
                 "local": true,
                 "user": false,
-                "module": "@5minds/node-red-contrib-processcube-amqp",
-                "file": "/data/node_modules/@5minds/node-red-contrib-processcube-amqp/amqp-intermediate-input.js"
+                "module": "@stormpass/node-red-contrib-amqp",
+                "file": "/data/node_modules/@stormpass/node-red-contrib-amqp/build/src/nodes/amqp-broker.js"
             },
-            "amqpIntermediateOutput": {
-                "name": "amqpIntermediateOutput",
+            "amqp-in-manual-ack": {
+                "name": "amqp-in-manual-ack",
                 "types": [
-                    "amqp-intermediate-output"
+                    "amqp-in-manual-ack"
                 ],
                 "enabled": true,
                 "local": true,
                 "user": false,
-                "module": "@5minds/node-red-contrib-processcube-amqp",
-                "file": "/data/node_modules/@5minds/node-red-contrib-processcube-amqp/amqp-intermediate-output.js"
-            },
-            "amqpOutput": {
-                "name": "amqpOutput",
-                "types": [
-                    "amqp-output"
-                ],
-                "enabled": true,
-                "local": true,
-                "user": false,
-                "module": "@5minds/node-red-contrib-processcube-amqp",
-                "file": "/data/node_modules/@5minds/node-red-contrib-processcube-amqp/amqp-output.js"
-            },
-            "amqpConfig": {
-                "name": "amqpConfig",
-                "types": [
-                    "amqp-config"
-                ],
-                "enabled": true,
-                "local": true,
-                "user": false,
-                "module": "@5minds/node-red-contrib-processcube-amqp",
-                "file": "/data/node_modules/@5minds/node-red-contrib-processcube-amqp/amqp-config.js"
+                "module": "@stormpass/node-red-contrib-amqp",
+                "file": "/data/node_modules/@stormpass/node-red-contrib-amqp/build/src/nodes/amqp-in-manual-ack.js"
             }
         }
     }

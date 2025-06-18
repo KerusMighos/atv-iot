@@ -1,15 +1,15 @@
 export class Atuador {
     constructor(nome){
         this.nome = nome;
-        this.petencia = 0;
+        this.potencia = 0;
     }
 
     updatePotencia(potencia){
-        this.estado = estado;
-        console.log(`Potencia atualizada para: ${this.estado}%`);
+        this.potencia = potencia;
+        console.log(`Potencia atualizada para: ${this.potencia}%`);
     }
 
     getPotencia(potencia){
-        return this.estado;
+        return this.potencia;
     }
 }
